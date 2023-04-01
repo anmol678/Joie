@@ -14,6 +14,17 @@ import GoogleSignInSwift
 func createGmailService() -> GTLRGmailService? {
     guard let currentUser = GIDSignIn.sharedInstance.currentUser
     else {
+        if GIDSignIn.sharedInstance.hasPreviousSignIn() {
+            GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                if let error = error {
+                    print("Error signing in: \(error.localizedDescription)")
+                    return
+                }
+            }
+                
+            return createGmailService()
+        }
+    
         return nil
     }
     
@@ -22,7 +33,7 @@ func createGmailService() -> GTLRGmailService? {
     return service
 }
 
-func fetchNewsletters(with query: String, completion: @escaping ([Newsletter]) -> Void) {
+func fetchNewslettersFromGmail(with query: String, completion: @escaping ([Newsletter]) -> Void) {
     guard let service = createGmailService() else {
         completion([])
         return

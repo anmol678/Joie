@@ -66,9 +66,6 @@ struct SettingsView: View {
                         print("Error adding additional scopes: \(error.localizedDescription)")
                         return
                     }
-
-                    // Save the user authentication information
-//                    saveUserAuthInfo(user: user)
                 }
                 
                 // User is signed in, update the email address in the view
@@ -76,12 +73,11 @@ struct SettingsView: View {
 
                 
                 // Call your fetchNewsletters function here, for example:
-                fetchNewsletters(with: "label:snipd", completion: { newsletters in
-                    // Update your newsletterStore with the fetched newsletters
+                newsletterStore.fetchNewsletters {
                     DispatchQueue.main.async {
-                        newsletterStore.newsletters = newsletters
+                        presentationMode.wrappedValue.dismiss()
                     }
-                })
+                }
             }
         }
     }

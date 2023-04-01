@@ -55,6 +55,9 @@ struct NewsletterView: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Newsletters")
+        .onAppear {
+            newsletterStore.fetchNewsletters { }
+        }
     }
 }
 

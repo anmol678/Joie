@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7920F10229D8699400F30C75 /* NewsletterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920F10129D8699400F30C75 /* NewsletterStore.swift */; };
 		79C8D14D29D6D1280087E1E4 /* JoieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D14C29D6D1280087E1E4 /* JoieApp.swift */; };
 		79C8D14F29D6D1280087E1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D14E29D6D1280087E1E4 /* ContentView.swift */; };
 		79C8D15129D6D1290087E1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C8D15029D6D1290087E1E4 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7920F10129D8699400F30C75 /* NewsletterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsletterStore.swift; sourceTree = "<group>"; };
 		7942AFA929D6E85D00B385B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79C8D14929D6D1280087E1E4 /* Joie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C8D14C29D6D1280087E1E4 /* JoieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoieApp.swift; sourceTree = "<group>"; };
@@ -85,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7920F0FD29D85D2A00F30C75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79C8D17729D6D14A0087E1E4 /* NewsletterView.swift */,
+				79C8D17929D6D1780087E1E4 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7920F0FE29D85D4500F30C75 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				79C8D17B29D6D1FE0087E1E4 /* GoogleClient.swift */,
+				7920F10129D8699400F30C75 /* NewsletterStore.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		79C8D14029D6D1280087E1E4 = {
 			isa = PBXGroup;
 			children = (
@@ -108,15 +128,14 @@
 		79C8D14B29D6D1280087E1E4 /* Joie */ = {
 			isa = PBXGroup;
 			children = (
+				7920F0FE29D85D4500F30C75 /* Utils */,
 				7942AFA929D6E85D00B385B5 /* Info.plist */,
 				79C8D14C29D6D1280087E1E4 /* JoieApp.swift */,
 				79C8D14E29D6D1280087E1E4 /* ContentView.swift */,
 				79C8D15029D6D1290087E1E4 /* Assets.xcassets */,
 				79C8D15229D6D1290087E1E4 /* Joie.entitlements */,
 				79C8D15329D6D1290087E1E4 /* Preview Content */,
-				79C8D17729D6D14A0087E1E4 /* NewsletterView.swift */,
-				79C8D17929D6D1780087E1E4 /* SettingsView.swift */,
-				79C8D17B29D6D1FE0087E1E4 /* GoogleClient.swift */,
+				7920F0FD29D85D2A00F30C75 /* Views */,
 			);
 			path = Joie;
 			sourceTree = "<group>";
@@ -288,6 +307,7 @@
 				79C8D14F29D6D1280087E1E4 /* ContentView.swift in Sources */,
 				79C8D17A29D6D1780087E1E4 /* SettingsView.swift in Sources */,
 				79C8D17829D6D14A0087E1E4 /* NewsletterView.swift in Sources */,
+				7920F10229D8699400F30C75 /* NewsletterStore.swift in Sources */,
 				79C8D17C29D6D1FE0087E1E4 /* GoogleClient.swift in Sources */,
 				79C8D14D29D6D1280087E1E4 /* JoieApp.swift in Sources */,
 			);

@@ -8,10 +8,6 @@
 import SwiftUI
 import GoogleSignIn
 
-class NewsletterStore: ObservableObject {
-    @Published var newsletters: [Newsletter] = []
-}
-
 @main
 struct JoieApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
