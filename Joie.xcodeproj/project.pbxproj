@@ -14,6 +14,12 @@
 		79C8D15F29D6D12A0087E1E4 /* JoieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D15E29D6D12A0087E1E4 /* JoieTests.swift */; };
 		79C8D16929D6D12A0087E1E4 /* JoieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D16829D6D12A0087E1E4 /* JoieUITests.swift */; };
 		79C8D16B29D6D12A0087E1E4 /* JoieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D16A29D6D12A0087E1E4 /* JoieUITestsLaunchTests.swift */; };
+		79C8D17829D6D14A0087E1E4 /* NewsletterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D17729D6D14A0087E1E4 /* NewsletterView.swift */; };
+		79C8D17A29D6D1780087E1E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D17929D6D1780087E1E4 /* SettingsView.swift */; };
+		79C8D17C29D6D1FE0087E1E4 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D17B29D6D1FE0087E1E4 /* GoogleClient.swift */; };
+		79C8D17F29D6D3600087E1E4 /* GoogleAPIClientForREST_Gmail in Frameworks */ = {isa = PBXBuildFile; productRef = 79C8D17E29D6D3600087E1E4 /* GoogleAPIClientForREST_Gmail */; };
+		79C8D18229D6D4DB0087E1E4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 79C8D18129D6D4DB0087E1E4 /* GoogleSignIn */; };
+		79C8D18429D6D4DB0087E1E4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79C8D18329D6D4DB0087E1E4 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7942AFA929D6E85D00B385B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79C8D14929D6D1280087E1E4 /* Joie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C8D14C29D6D1280087E1E4 /* JoieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoieApp.swift; sourceTree = "<group>"; };
 		79C8D14E29D6D1280087E1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +52,9 @@
 		79C8D16429D6D12A0087E1E4 /* JoieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C8D16829D6D12A0087E1E4 /* JoieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoieUITests.swift; sourceTree = "<group>"; };
 		79C8D16A29D6D12A0087E1E4 /* JoieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		79C8D17729D6D14A0087E1E4 /* NewsletterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsletterView.swift; sourceTree = "<group>"; };
+		79C8D17929D6D1780087E1E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		79C8D17B29D6D1FE0087E1E4 /* GoogleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C8D18429D6D4DB0087E1E4 /* GoogleSignInSwift in Frameworks */,
+				79C8D17F29D6D3600087E1E4 /* GoogleAPIClientForREST_Gmail in Frameworks */,
+				79C8D18229D6D4DB0087E1E4 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +108,15 @@
 		79C8D14B29D6D1280087E1E4 /* Joie */ = {
 			isa = PBXGroup;
 			children = (
+				7942AFA929D6E85D00B385B5 /* Info.plist */,
 				79C8D14C29D6D1280087E1E4 /* JoieApp.swift */,
 				79C8D14E29D6D1280087E1E4 /* ContentView.swift */,
 				79C8D15029D6D1290087E1E4 /* Assets.xcassets */,
 				79C8D15229D6D1290087E1E4 /* Joie.entitlements */,
 				79C8D15329D6D1290087E1E4 /* Preview Content */,
+				79C8D17729D6D14A0087E1E4 /* NewsletterView.swift */,
+				79C8D17929D6D1780087E1E4 /* SettingsView.swift */,
+				79C8D17B29D6D1FE0087E1E4 /* GoogleClient.swift */,
 			);
 			path = Joie;
 			sourceTree = "<group>";
@@ -145,6 +162,11 @@
 			dependencies = (
 			);
 			name = Joie;
+			packageProductDependencies = (
+				79C8D17E29D6D3600087E1E4 /* GoogleAPIClientForREST_Gmail */,
+				79C8D18129D6D4DB0087E1E4 /* GoogleSignIn */,
+				79C8D18329D6D4DB0087E1E4 /* GoogleSignInSwift */,
+			);
 			productName = Joie;
 			productReference = 79C8D14929D6D1280087E1E4 /* Joie.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +239,10 @@
 				Base,
 			);
 			mainGroup = 79C8D14029D6D1280087E1E4;
+			packageReferences = (
+				79C8D17D29D6D3600087E1E4 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+				79C8D18029D6D4DB0087E1E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 79C8D14A29D6D1280087E1E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C8D14F29D6D1280087E1E4 /* ContentView.swift in Sources */,
+				79C8D17A29D6D1780087E1E4 /* SettingsView.swift in Sources */,
+				79C8D17829D6D14A0087E1E4 /* NewsletterView.swift in Sources */,
+				79C8D17C29D6D1FE0087E1E4 /* GoogleClient.swift in Sources */,
 				79C8D14D29D6D1280087E1E4 /* JoieApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +448,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Joie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -457,6 +487,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Joie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -612,6 +643,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79C8D17D29D6D3600087E1E4 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/google-api-objectivec-client-for-rest.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		79C8D18029D6D4DB0087E1E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79C8D17E29D6D3600087E1E4 /* GoogleAPIClientForREST_Gmail */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79C8D17D29D6D3600087E1E4 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Gmail;
+		};
+		79C8D18129D6D4DB0087E1E4 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79C8D18029D6D4DB0087E1E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		79C8D18329D6D4DB0087E1E4 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79C8D18029D6D4DB0087E1E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79C8D14129D6D1280087E1E4 /* Project object */;
 }
