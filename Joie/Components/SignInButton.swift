@@ -14,22 +14,24 @@ struct SignInButton: View {
     @EnvironmentObject var newsletterStore: NewsletterStore
     
     var body: some View {
-        Text("Sign in with Google")
-            .font(.headline)
-            .padding(.bottom, 8)
+        VStack {
+            Text("Sign in with Google")
+                .font(.headline)
+                .padding(.bottom, 8)
 
-        Button(action: {
-            newsletterStore.signInWithGoogle {
-                newsletterStore.fetchNewsletters {
-                    DispatchQueue.main.async {
-                        presentationMode.wrappedValue.dismiss()
+            Button(action: {
+                newsletterStore.signInWithGoogle {
+                    newsletterStore.fetchNewsletters {
+                        DispatchQueue.main.async {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
                 }
+            }) {
+                GIDSignInButtonWrapper()
             }
-        }) {
-            GIDSignInButtonWrapper()
+            .frame(width: 200, height: 50)
         }
-        .frame(width: 200, height: 50)
     }
 }
 

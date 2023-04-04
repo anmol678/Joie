@@ -11,31 +11,68 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @EnvironmentObject var newsletterStore: NewsletterStore
+    
+    @State var newQuery: String = ""
 
     var body: some View {
         NavigationView {
             VStack {
                 if let profile = newsletterStore.userProfile {
-                    // Display user profile information
-                    HStack {
-                        if let imageURL = profile.imageURL(withDimension: 100) {
-                            RemoteImage(url: imageURL)
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
+                    Form {
+                        Section(header: Text("User Profile")) {
+                            HStack {
+                                if let imageURL = profile.imageURL(withDimension: 100) {
+                                    RemoteImage(url: imageURL)
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                }
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .leading) {
+                                    Text(profile.name)
+                                    Text(profile.email)
+                                }
+                            }
+                            .padding()
                         }
-                        Spacer()
-                        VStack {
-                            Text("Name: \(profile.name)")
-                            Text("Email: \(profile.email)")
+                        
+                        Section(header: Text("Queries")) {
+                            ForEach(newsletterStore.queries.indices, id: \.self) { index in
+                                TextField("Query", text: $newsletterStore.queries[index])
+                            }
+                            .onDelete(perform: newsletterStore.deleteQuery)
+                            
+                            HStack {
+                                TextField("Add query", text: $newQuery)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                
+                                Button(action: {
+                                    newsletterStore.addQuery(newQuery)
+                                    newQuery = ""
+                                }) {
+                                    Image(systemName: "plus.circle.fill")
+                                }
+                            }
+                        }
+                        
+                        Section(header: Text("Fetch")) {
+                            Button(action: {
+                                newsletterStore.fetchNewsletters {
+                                    DispatchQueue.main.async {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                }
+                            }) {
+                                Text("Fetch Data")
+                            }
                         }
                     }
-                    .padding()
                 } else {
-                    // Display sign-in button
                     SignInButton()
                 }
             }
-            .padding()
+//            .padding()
             .navigationBarTitle("Settings", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
