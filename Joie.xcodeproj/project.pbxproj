@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7920F10229D8699400F30C75 /* NewsletterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920F10129D8699400F30C75 /* NewsletterStore.swift */; };
+		7927453829DC015700E80EA1 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927453729DC015700E80EA1 /* SignInButton.swift */; };
+		7927453A29DC018800E80EA1 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927453929DC018800E80EA1 /* RemoteImage.swift */; };
 		79C8D14D29D6D1280087E1E4 /* JoieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D14C29D6D1280087E1E4 /* JoieApp.swift */; };
 		79C8D14F29D6D1280087E1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8D14E29D6D1280087E1E4 /* ContentView.swift */; };
 		79C8D15129D6D1290087E1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C8D15029D6D1290087E1E4 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		7920F10129D8699400F30C75 /* NewsletterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsletterStore.swift; sourceTree = "<group>"; };
+		7927453729DC015700E80EA1 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		7927453929DC018800E80EA1 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		7942AFA929D6E85D00B385B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79C8D14929D6D1280087E1E4 /* Joie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C8D14C29D6D1280087E1E4 /* JoieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoieApp.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7927453629DC013C00E80EA1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7927453729DC015700E80EA1 /* SignInButton.swift */,
+				7927453929DC018800E80EA1 /* RemoteImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		79C8D14029D6D1280087E1E4 = {
 			isa = PBXGroup;
 			children = (
@@ -132,10 +145,11 @@
 				7942AFA929D6E85D00B385B5 /* Info.plist */,
 				79C8D14C29D6D1280087E1E4 /* JoieApp.swift */,
 				79C8D14E29D6D1280087E1E4 /* ContentView.swift */,
+				7927453629DC013C00E80EA1 /* Components */,
+				7920F0FD29D85D2A00F30C75 /* Views */,
 				79C8D15029D6D1290087E1E4 /* Assets.xcassets */,
 				79C8D15229D6D1290087E1E4 /* Joie.entitlements */,
 				79C8D15329D6D1290087E1E4 /* Preview Content */,
-				7920F0FD29D85D2A00F30C75 /* Views */,
 			);
 			path = Joie;
 			sourceTree = "<group>";
@@ -304,8 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7927453829DC015700E80EA1 /* SignInButton.swift in Sources */,
 				79C8D14F29D6D1280087E1E4 /* ContentView.swift in Sources */,
 				79C8D17A29D6D1780087E1E4 /* SettingsView.swift in Sources */,
+				7927453A29DC018800E80EA1 /* RemoteImage.swift in Sources */,
 				79C8D17829D6D14A0087E1E4 /* NewsletterView.swift in Sources */,
 				7920F10229D8699400F30C75 /* NewsletterStore.swift in Sources */,
 				79C8D17C29D6D1FE0087E1E4 /* GoogleClient.swift in Sources */,

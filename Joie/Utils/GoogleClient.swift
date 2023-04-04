@@ -9,36 +9,14 @@ import Foundation
 import GoogleAPIClientForRESTCore
 import GoogleAPIClientForREST_Gmail
 import GoogleSignIn
-import GoogleSignInSwift
 
-func createGmailService() -> GTLRGmailService? {
-    guard let currentUser = GIDSignIn.sharedInstance.currentUser
-    else {
-        if GIDSignIn.sharedInstance.hasPreviousSignIn() {
-            GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-                if let error = error {
-                    print("Error signing in: \(error.localizedDescription)")
-                    return
-                }
-            }
-                
-            return createGmailService()
-        }
-    
-        return nil
-    }
-    
+func createGmailService(_ currentUser: GIDGoogleUser) -> GTLRGmailService {
     let service = GTLRGmailService()
     service.authorizer = currentUser.fetcherAuthorizer
     return service
 }
 
-func fetchNewslettersFromGmail(with query: String, completion: @escaping ([Newsletter]) -> Void) {
-    guard let service = createGmailService() else {
-        completion([])
-        return
-    }
-    
+func fetchNewslettersFromGmail(with query: String, service: GTLRGmailService, completion: @escaping ([Newsletter]) -> Void) {
     let listQuery = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
     listQuery.q = query
     
