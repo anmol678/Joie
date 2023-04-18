@@ -14,18 +14,39 @@ class NewsletterStore: ObservableObject {
     
     @Published var newsletters: [Newsletter] = []
     
-    let query = "label:snipd"
+    @Published var queries: [String] = ["label:snipd"]
     
     func fetchNewsletters(completion: @escaping () -> Void) {
         if let currentUser = getGoogleUser() {
-            fetchNewslettersFromGmail(with: query, service: createGmailService(currentUser), completion: { newsletters in
-                // Update your newsletterStore with the fetched newsletters
-                DispatchQueue.main.async {
-                    self.newsletters = newsletters
-                    completion()
+            let service = createGmailService(currentUser)
+            var allNewsletters: [Newsletter] = []
+            let dispatchGroup = DispatchGroup()
+
+            for query in queries {
+                dispatchGroup.enter()
+                fetchNewslettersFromGmail(with: query, service: service) { newsletters in
+                    // Update the fetched newsletters
+                    allNewsletters.append(contentsOf: newsletters)
+                    dispatchGroup.leave()
                 }
-            })
+            }
+
+            // Wait for all queries to finish, then update the newsletters in the store
+            dispatchGroup.notify(queue: .main) {
+                self.newsletters = allNewsletters
+                completion()
+            }
         }
+    }
+    
+    func addQuery(_ newQuery: String) {
+        if !newQuery.isEmpty {
+            queries.append(newQuery)
+        }
+    }
+    
+    func deleteQuery(at offsets: IndexSet) {
+        queries.remove(atOffsets: offsets)
     }
     
     func signInWithGoogle(completion: @escaping () -> Void) {
