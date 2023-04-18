@@ -39,6 +39,7 @@ func fetchNewslettersFromGmail(with query: String, service: GTLRGmailService, _ 
         let messageIds = messages.map { $0.identifier }
         var fetchedNewsletters: [Newsletter] = []
         let dispatchGroup = DispatchGroup()
+        let newslettersQueue = DispatchQueue(label: "com.joie.newslettersQueue")
         
         for messageId in messageIds {
             dispatchGroup.enter()
@@ -71,15 +72,15 @@ func fetchNewslettersFromGmail(with query: String, service: GTLRGmailService, _ 
                 let snippet = message.snippet ?? ""
                 let isRead = !(message.labelIds?.contains("UNREAD") ?? true)
                 
-                // Create a Newsletter object for the message
                 let newsletter = Newsletter(id: messageId, title: subject, description: snippet, sender: from, date: date, isRead: isRead)
-                fetchedNewsletters.append(newsletter)
-                
-                dispatchGroup.leave()
+               
+                newslettersQueue.async {
+                    fetchedNewsletters.append(newsletter)
+                    dispatchGroup.leave()
+                }
             }
         }
         
-        // Wait for all message details to be fetched, then pass the newsletters to the completion handler
         dispatchGroup.notify(queue: .main) {
             completion(fetchedNewsletters)
         }

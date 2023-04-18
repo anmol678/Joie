@@ -21,17 +21,18 @@ class NewsletterStore: ObservableObject {
             let service = createGmailService(currentUser)
             var allNewsletters: [Newsletter] = []
             let dispatchGroup = DispatchGroup()
+            let allNewslettersQueue = DispatchQueue(label: "com.joie.allNewslettersQueue")
 
             for query in queries {
                 dispatchGroup.enter()
                 fetchNewslettersFromGmail(with: query, service: service) { newsletters in
-                    // Update the fetched newsletters
-                    allNewsletters.append(contentsOf: newsletters)
-                    dispatchGroup.leave()
+                    allNewslettersQueue.async {
+                        allNewsletters.append(contentsOf: newsletters)
+                        dispatchGroup.leave()
+                    }
                 }
             }
 
-            // Wait for all queries to finish, then update the newsletters in the store
             dispatchGroup.notify(queue: .main) {
                 self.newsletters = allNewsletters
                 completion()
