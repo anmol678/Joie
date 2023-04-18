@@ -25,14 +25,15 @@ struct SettingsView: View {
                                     RemoteImage(url: imageURL)
                                         .frame(width: 40, height: 40)
                                         .clipShape(Circle())
+                                        .padding(.all, 8)
                                 }
-                                
-                                Spacer()
                                 
                                 VStack(alignment: .leading) {
                                     Text(profile.name)
                                     Text(profile.email)
                                 }
+                                
+                                Spacer()
                             }
                             .padding()
                         }
